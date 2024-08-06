@@ -23,15 +23,15 @@ jobs:
       
       - name: Start API server
         run: |
-          Start-Process src/web/apis "npm install"
+          Start-Process web/apis "npm install"
           timeout /t 10
-          Start-Process src/web/apis "npm start"
+          Start-Process web/apis "npm start"
       
       - name: Start web server
         run: |
-          Start-Process src/web/webapp  "npm install --legacy-peer-deps"
+          Start-Process web/webapp  "npm install --legacy-peer-deps"
           timeout /t 10
-          Start-Process src/web/webapp "npm run dev"
+          Start-Process web/webapp "npm run dev"
       
       - name: Run Cypress tests
         run: npx cypress run
