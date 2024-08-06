@@ -23,13 +23,14 @@ jobs:
       
       - name: Start API server
         run: |
-          start /b npm run start-api
+          Start-Process "npm" -ArgumentList "run start-api" -NoNewWindow
           timeout /t 10
       
       - name: Start web server
         run: |
-          start /b npm run start-web
+          Start-Process "npm" -ArgumentList "run start-web" -NoNewWindow
           timeout /t 10
       
       - name: Run Cypress tests
         run: npx cypress run
+
