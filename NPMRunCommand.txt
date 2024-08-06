@@ -1,0 +1,20 @@
+npm init - for creating packages
+npm start to start the program.
+
+
+Database: testpetdb
+Username: testpetdb
+Email: sjchristopher@gmail.com
+
+https://www.db4free.net/confirm.php?create=2ab74b0380c253f5f76ddf05988b4881
+
+https://github.com/nocodb/nocodb#docker
+
+
+
+H:\DocRepos\Projects\Per\nocodb\ig_88\README.md
+
+https://www.milesweb.in/hosting-faqs/setup-node-js-end-user-interface/
+
+
+https://usecsv.com/community/sequelize-with-nodejs
