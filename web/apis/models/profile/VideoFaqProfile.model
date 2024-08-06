@@ -1,0 +1,24 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const VideoFaqProfile = sequelize.define("videoFaqProfile", {
+    
+  vid: {
+       type: Sequelize.INTEGER,
+       primaryKey : true,
+       allowNull: false
+    },
+   uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  titlequestion: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  linkanswer: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+    });  
+    return VideoFaqProfile;
+};

@@ -1,0 +1,29 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const LoginProfile = sequelize.define("loginProfile", {
+    
+  id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    loginid: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  passwd: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  cid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  ctype: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }    
+    });  
+    return LoginProfile;
+};

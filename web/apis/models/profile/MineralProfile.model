@@ -1,0 +1,81 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const MineralProfile = sequelize.define("mineralProfile", {
+    
+  tpid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+     uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  breed: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  opbal: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  receipt: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  total: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  utilisation: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  wastage: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  closebal: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  mineral: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  reproductive: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  bpl: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  scst: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  women: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  scheme: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  aavin: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  deficiency: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  reproductivedisorder: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }    
+    });  
+    return MineralProfile;
+};

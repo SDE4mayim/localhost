@@ -1,0 +1,21 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const PetTypeMapping = sequelize.define("pet_type_mapping", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    doctor_id: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    },
+    pet_type_id: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    }     
+    });  
+    return PetTypeMapping;
+};

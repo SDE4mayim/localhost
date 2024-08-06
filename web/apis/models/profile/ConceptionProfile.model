@@ -1,0 +1,45 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const ConceptionProfile = sequelize.define("conceptionProfile", {
+    
+    tpid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  breed: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  ai: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  verified: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  sold: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  positive: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  negative: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  percentage: {
+    type: Sequelize.FLOAT
+    allowNull: false
+  }     
+    });  
+    return ConceptionProfile;
+};

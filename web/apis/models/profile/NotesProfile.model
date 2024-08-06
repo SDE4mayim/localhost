@@ -1,0 +1,25 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const NotesProfile = sequelize.define("notesProfile", {
+    
+  notesid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  notesdetails: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  tdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }    
+    });  
+    return NotesProfile;
+};

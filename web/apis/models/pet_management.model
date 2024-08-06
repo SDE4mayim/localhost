@@ -1,0 +1,62 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const PetManagement = sequelize.define("pet_management", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    pet_name: {
+         type: Sequelize.STRING,
+       allowNull: false
+    } ,
+    pet_type_id: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    },
+    gender: {
+       type: Sequelize.ENUM('male', 'female', 'other'),
+       allowNull: false
+    },
+    age: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    },
+    weight: {
+       type: Sequelize.FLOAT,
+       allowNull: true
+    },
+    owner_id: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    },
+    last_vet_visit: {
+       type: Sequelize.DATE,
+       allowNull: true
+    },
+    next_vet_visit: {
+       type: Sequelize.DATE,
+       allowNull: true
+    },
+    food_brand: {
+       type: Sequelize.STRING,
+       allowNull: true
+    },
+    food_type: {
+       type: Sequelize.ENUM('dry', 'wet', 'raw'),
+       allowNull: false
+    },
+    food_amount: {
+       type: Sequelize.INTEGER,
+       allowNull: true
+    },
+    is_active: {
+       type: Sequelize.TINYINT,
+       allowNull: true,
+       defaultValue: 1
+    }    
+    });  
+    return PetManagement;
+};

@@ -1,0 +1,133 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const ProductProfile = sequelize.define("productProfile", {
+    
+  pid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+   pname: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  pcode: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  ratedr: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  rateph: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  ratews: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  ratefarms: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  rateemp: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  disc: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  disctxt: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  composition: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  indicators: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  dosage: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  presentation: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  features: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  remarks: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  status: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  catid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minqty: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  maxqty: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minqtyws: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minqtyph: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minqtyemp: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  orderedqty: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  gst: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  packing: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  expdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  mrp: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  instock: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  priority: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
+    });  
+    return ProductProfile;
+};

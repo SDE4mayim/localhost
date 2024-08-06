@@ -1,0 +1,70 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const Inventory = sequelize.define("product", {
+    
+     id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+    pname: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    rate: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    features: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    remarks: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    status: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    catid: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'product_categories', // 'product_categories' refers to table name
+        key: 'id', // 'id' refers to column name in product_categories table
+      }
+    },
+    gst: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    mrp: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    instock: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 1
+    },
+    priority: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    pcode: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    hsn: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    }
+  },);
+    return Inventory;
+};

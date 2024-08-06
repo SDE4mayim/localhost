@@ -1,0 +1,61 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const SettingsProfile = sequelize.define("settingsProfile", {
+    
+  pid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+   absolutepath: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  razorid: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  razorsecret: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  smsheader: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  paytmmid: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  paytmmkey: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  callbackurl: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  minamtdr: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minamtws: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minamtch: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minamtemp: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  minamtfarm: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
+    });  
+    return SettingsProfile;
+};

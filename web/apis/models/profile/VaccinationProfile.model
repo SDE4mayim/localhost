@@ -1,0 +1,101 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const VaccinationProfile = sequelize.define("vaccinationProfile", {
+    
+  tpid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  hsv: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  bqv: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  anthcattle: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  anthgoat: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  etv: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  total: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  footcattle: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  footgoat: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  sheeppox: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  goatpox: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  rdvk: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  duckplague: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  fowlpox: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  rabies: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  canine: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  parvo: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  ppr: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  brucella: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  lepto: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  hepatitis: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  tdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+    });  
+    return VaccinationProfile;
+};

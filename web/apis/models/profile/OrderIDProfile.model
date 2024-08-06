@@ -1,0 +1,20 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const OrderIDProfile = sequelize.define("orderIDProfile", {
+    
+     orderid: {
+    type: Sequelize.STRING,
+    primaryKey : true,
+    allowNull: false
+  },
+  checksum: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  ctype: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
+    });  
+    return OrderIDProfile;
+};

@@ -1,0 +1,16 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const VersionProfile = sequelize.define("versionProfile", {
+    
+  vname: {
+       type: Sequelize.INTEGER,
+       primaryKey : true,
+       allowNull: false
+    },
+   status: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
+    });  
+    return VersionProfile;
+};

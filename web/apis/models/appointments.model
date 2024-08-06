@@ -1,0 +1,35 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const Appointment = sequelize.define("appointment", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    pet_id: {
+       type: Sequelize.INTEGER,
+    allowNull: false
+    },
+    doctor_id: {
+       type: Sequelize.INTEGER,
+    allowNull: false
+    },
+    appointment_date: {
+       type: Sequelize.DATE,
+    allowNull: false
+    },
+    appointment_notes: {
+         type: Sequelize.STRING
+    },
+    is_active: {
+       type: Sequelize.TINYINT,
+       allowNull: false,
+       defaultValue: 1
+    }     
+    },{
+      timestamps: false,
+    });  
+    return Appointment;
+};

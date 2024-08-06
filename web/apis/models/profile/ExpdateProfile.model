@@ -1,0 +1,12 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const ExpdateProfile = sequelize.define("expadateProfile", {
+    
+  expdate: {
+    type: Sequelize.STRING,
+    primaryKey : true,
+    allowNull : false
+  },    
+    });  
+    return ExpdateProfile;
+};

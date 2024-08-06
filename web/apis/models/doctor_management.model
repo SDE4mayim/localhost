@@ -1,0 +1,21 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const Doctor_Management = sequelize.define("doctor_management", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    profile_id: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    },
+    hospital_id: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    }   
+    });  
+    return Doctor_Management;
+};

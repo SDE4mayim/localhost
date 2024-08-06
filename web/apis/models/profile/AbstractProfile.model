@@ -1,0 +1,28 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const AbstractProfile = sequelize.define("abstractProfile", {
+    
+    abid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    uid: {
+       type: Sequelize.INTEGER,
+    allowNull: false
+    },
+    qty: {
+       type: Sequelize.INTEGER,
+    allowNull: false
+    },
+    absname: {
+       type: Sequelize.STRING,
+    allowNull: false
+    },
+    monthyr: {
+         type: Sequelize.STRING
+    }      
+    });  
+    return AbstractProfile;
+};

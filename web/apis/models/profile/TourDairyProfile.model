@@ -1,0 +1,49 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const TourDairyProfile = sequelize.define("tourDairyProfile", {
+    
+  tdid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+ uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  worktype: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  area: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  leaveoption: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  purpose: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  tdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  frmtime: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  totime: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  purposetext: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+    });  
+    return TourDairyProfile;
+};
