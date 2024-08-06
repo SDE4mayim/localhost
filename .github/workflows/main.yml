@@ -22,16 +22,16 @@ jobs:
         run: npm install cypress --save-dev --force
       
       - name: Start API server
-        run: |
-          Start-Process web/apis "npm install"
+        run: npm install
           timeout /t 10
-          Start-Process web/apis "npm start"
+      - name: Start API run server
+        run : npm install
       
       - name: Start web server
-        run: |
-          Start-Process web/webapp  "npm install --legacy-peer-deps"
+        run: npm install --legacy-peer-deps
           timeout /t 10
-          Start-Process web/webapp "npm run dev"
+      - name: Start web server running
+        run : npm run dev
       
       - name: Run Cypress tests
         run: npx cypress run
