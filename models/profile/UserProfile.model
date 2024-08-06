@@ -1,0 +1,121 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const UserProfile = sequelize.define("userProfile", {
+    
+  cid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  cname: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  cnametamil: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  mobile: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  passwd: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  cpasswd: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  instiname: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  division: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  district: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  instinametamil: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  divisiontamil: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  districttamil: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  state: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  pic1: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  status: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  designation: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  institype: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  sc: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  st: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  ctype: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  active: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  free: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  basicpay: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  treasurypay: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  dailyallowance: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  incidentalcharge: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  terminalcharge: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  }
+    });  
+    return UserProfile;
+};

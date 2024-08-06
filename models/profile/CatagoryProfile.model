@@ -1,0 +1,20 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const CatagoryProfile = sequelize.define("catagoryProfile", {
+    
+   catid: {
+    type: Sequelize.STRING,
+    primaryKey : true,
+    allowNull: false
+  },
+  catname: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  ctype: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }    
+    });  
+    return CatagoryProfile;
+};

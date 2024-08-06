@@ -1,0 +1,79 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const AlTargetProfile = sequelize.define("AlTargetProfile", {
+    
+    uid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  cattlebreedpop: {
+    type: Sequelize.STRING
+  },
+  cattleaitarget: {
+    type: Sequelize.STRING
+  },
+  cattleaiach: {
+    type: Sequelize.STRING
+  },
+  cattlecalftarget: {
+    type: Sequelize.STRING
+  },
+  cattlecalfach: {
+    type: Sequelize.STRING
+  },
+  draughtbreedpop: {
+    type: Sequelize.STRING
+  },
+  draughtaitarget: {
+    type: Sequelize.STRING
+  },
+  draughtaiach: {
+    type: Sequelize.STRING
+  },
+  draughtcalftarget: {
+    type: Sequelize.STRING
+  },
+  draughtcalfach: {
+    type: Sequelize.STRING
+  },
+  indbreedpop: {
+    type: Sequelize.STRING
+  },
+  indaitarget: {
+    type: Sequelize.STRING
+  },
+  indaiach: {
+    type: Sequelize.STRING
+  },
+  indcalftarget: {
+    type: Sequelize.STRING
+  },
+  indcalfach: {
+    type: Sequelize.STRING
+  },
+  bufbreedpop: {
+    type: Sequelize.STRING
+  },
+  bufaitarget: {
+    type: Sequelize.STRING
+  },
+  bufaiach: {
+    type: Sequelize.STRING
+  },
+  bufcalftarget: {
+    type: Sequelize.STRING
+  },
+  bufcalfach: {
+    type: Sequelize.STRING
+  },
+  months: {
+    type: Sequelize.STRING
+  },
+  years: {
+    type: Sequelize.STRING
+  }
+});
+    return AlTargetProfile;
+};

@@ -1,0 +1,45 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const ShandyProfile = sequelize.define("shandyProfile", {
+    
+  tpid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+   uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  place: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  period: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  cattle: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  buffalo: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  sheep: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  goat: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  others: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
+    });  
+    return ShandyProfile;
+};

@@ -1,0 +1,21 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const PetType = sequelize.define("pet_type", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    pet_type: {
+       type: Sequelize.STRING,
+       allowNull: false
+    },
+    breed: {
+       type: Sequelize.STRING,
+       allowNull: true
+    }      
+    });  
+    return PetType;
+};

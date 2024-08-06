@@ -1,0 +1,28 @@
+module.exports = (sequelize, Sequelize) => {
+  const Vaccination = sequelize.define("vaccinations", {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+    animal_type: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    age_weeks: {
+      type: Sequelize.INTEGER
+    },
+    vaccine: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    notes: {
+      type: Sequelize.STRING
+    }
+  }, {
+    timestamps: false, // If you don't want createdAt and updatedAt fields
+  });
+
+  return Vaccination;
+};

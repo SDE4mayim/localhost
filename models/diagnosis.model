@@ -1,0 +1,35 @@
+// models/diagnosis.model.js
+module.exports = (sequelize, Sequelize) => {
+  const Diagnosis = sequelize.define("diagnoses", {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+    pet_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    doctor_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    diagnosis_date: {
+      type: Sequelize.DATE,
+      allowNull: false
+    },
+    diagnosis_notes: {
+      type: Sequelize.STRING
+    },
+    is_active: {
+       type: Sequelize.TINYINT,
+       allowNull: true,
+       defaultValue: 1
+    }
+  }, {
+    timestamps: true,
+  });
+
+  return Diagnosis;
+};

@@ -1,0 +1,29 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const Hospital = sequelize.define("hospital", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    profile_id: {
+       type: Sequelize.INTEGER,
+       allowNull: false
+    },
+    subscription_plan:{
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    userlimit: {
+       type: Sequelize.INTEGER,
+       defaultValue:1
+    },
+    category_id: {
+       type: Sequelize.INTEGER,
+       allowNull: true
+    }   
+    });  
+    return Hospital;
+};

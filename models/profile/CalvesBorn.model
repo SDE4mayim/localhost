@@ -1,0 +1,41 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const CalvesBorn = sequelize.define("calvesBorn", {
+    
+    tid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  aidone: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  pregnency: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  born: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  died: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  disposed: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  aborted: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }      
+    });  
+    return CalvesBorn;
+};

@@ -1,0 +1,42 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const AlTargetProfile = sequelize.define("AlTargetProfile", {
+    
+    aid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  frmarea: {
+    type: Sequelize.STRING
+  },
+  toarea: {
+    type: Sequelize.STRING
+  },
+  transport: {
+    type: Sequelize.STRING
+  },
+  uid: {
+    type: Sequelize.INTEGER
+    allowNull: false
+  },
+  distance: {
+    type: Sequelize.INTEGER
+    allowNull: false
+  },
+  fare: {
+    type: Sequelize.INTEGER
+    allowNull: false
+  },
+  dataexists: {
+    type: Sequelize.INTEGER
+    allowNull: false
+  },
+  terminalcharge: {
+    type: Sequelize.INTEGER
+    allowNull: false
+  }
+});
+    return AlTargetProfile;
+};

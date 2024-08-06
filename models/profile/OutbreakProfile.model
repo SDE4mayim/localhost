@@ -1,0 +1,61 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const OutbreakProfile = sequelize.define("outbreakProfile", {
+    
+  tpid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+  uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  attacks: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  deaths: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  livestock: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  vaccpercentage: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  tdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  disease: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  species: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  villages: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  panchayath: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  vaccoutbreak: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  vaccfree: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+    });  
+    return OutbreakProfile;
+};

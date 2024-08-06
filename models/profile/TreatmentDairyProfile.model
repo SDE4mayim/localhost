@@ -1,0 +1,57 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const TreatmentDairyProfile = sequelize.define("treatmentDairyProfile", {
+    
+  tpid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  species: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  medical: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  surgminor: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  surgmajor: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  og: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  total: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  castration: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  spaying: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  deworming: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  tdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+    });  
+    return TreatmentDairyProfile;
+};

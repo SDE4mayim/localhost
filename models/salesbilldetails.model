@@ -1,0 +1,48 @@
+module.exports = (sequelize, Sequelize) => {
+  const SalesBillDetails = sequelize.define("salesbilldetails", {
+    ID: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+    billid: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    pid: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    pname: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    pprice: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    qty: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    total: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    model: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    }
+  }, {
+    timestamps: false
+  });
+
+  return SalesBillDetails;
+};

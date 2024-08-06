@@ -1,0 +1,17 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const PurposeProfile = sequelize.define("purposeProfile", {
+    
+  pid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+   purposename: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+    });  
+    return PurposeProfile;
+};

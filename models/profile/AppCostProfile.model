@@ -1,0 +1,55 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const AppCostProfile = sequelize.define("appCostProfile", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    frmdate: {
+    type: Sequelize.STRING
+  },
+  todate: {
+    type: Sequelize.STRING
+  },
+  amnt1: {
+    type: Sequelize.FLOAT
+  },
+  amnt2: {
+    type: Sequelize.FLOAT
+  },
+  oamnt1: {
+    type: Sequelize.FLOAT
+  },
+  oamnt2: {
+    type: Sequelize.FLOAT
+  },
+  insamnt1: {
+    type: Sequelize.FLOAT
+  },
+  insamnt2: {
+    type: Sequelize.FLOAT
+  },
+  insoamnt1: {
+    type: Sequelize.FLOAT
+  },
+  insoamnt2: {
+    type: Sequelize.FLOAT
+  },
+  ahaamnt1: {
+    type: Sequelize.FLOAT
+  },
+  ahaamnt2: {
+    type: Sequelize.FLOAT
+  },
+  ahaoamnt1: {
+    type: Sequelize.FLOAT
+  },
+  ahaoamnt2: {
+    type: Sequelize.FLOAT
+  }      
+    });  
+    return AppCostProfile;
+};

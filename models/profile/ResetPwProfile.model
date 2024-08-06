@@ -1,0 +1,28 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const ResetPwProfile = sequelize.define("ResetPwProfile", {
+    
+  loginid: {
+    type: Sequelize.STRING,
+    primaryKey: true,
+    allowNull: false
+  },
+  passwd: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  otp: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  cid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  ctype: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
+    });  
+    return ResetPwProfile;
+};

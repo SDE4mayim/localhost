@@ -1,0 +1,100 @@
+module.exports = (sequelize, Sequelize) => {
+  const SalesBill = sequelize.define("salesbill", {
+    ID: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+    pdate: {
+      type: Sequelize.DATE,
+      allowNull: false
+    },
+    cid: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    total: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    discount: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    discount2: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    gtotal: {
+      type: Sequelize.FLOAT,
+      allowNull: false,
+      defaultValue: 0
+    },
+    sid: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    edate: {
+      type: Sequelize.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW
+    },
+    totalpvs: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    usedwallet: {
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+      defaultValue: 0
+    },
+    billedby: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    cname: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    cadd: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    cmobile: {
+      type: Sequelize.TEXT,
+      allowNull: false
+    },
+    bikeid: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    dealer: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    bankid: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    billtype: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    }
+  }, {
+    timestamps: false
+  });
+
+  return SalesBill;
+};

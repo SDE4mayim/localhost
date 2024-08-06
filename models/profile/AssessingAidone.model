@@ -1,0 +1,57 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const AssessingAidone = sequelize.define("assessingAidone", {
+    
+   tpid: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+       primaryKey : true,
+    allowNull: false
+  },
+  uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  aifresh: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  r1: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  r2: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  r3: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  more: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  total: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  aidone: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  positivecases: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  negativecases: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  others: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }      
+    });  
+    return AssessingAidone;
+};

@@ -1,0 +1,17 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const HospitalCategory = sequelize.define("hospital_category", {
+    
+    id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+    category_name: {
+       type: Sequelize.STRING,
+       allowNull: false
+    }  
+    });  
+    return HospitalCategory;
+};

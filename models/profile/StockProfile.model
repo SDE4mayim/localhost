@@ -1,0 +1,93 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const StockProfile = sequelize.define("stockProfile", {
+    
+  pid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+ uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  rid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  qty: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  oid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  catid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  opqty: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  recv: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  used: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  closebal: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  sdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  odate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  orderid: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  deliverydate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  remarks: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  pic1: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  pname: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  expdate: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  expdatetext: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  batchno: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  status: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
+    });  
+    return StockProfile;
+};

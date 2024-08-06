@@ -1,0 +1,45 @@
+module.exports = (sequelize, Sequelize) => {
+  
+  const FssProfile = sequelize.define("fssProfile", {
+    
+  tpid: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       primaryKey : true,
+       allowNull: false
+    },
+     uid: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  breed: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  opbal: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  receipt: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  total: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  utilisation: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  wastage: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  closebal: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }    
+    });  
+    return FssProfile;
+};
