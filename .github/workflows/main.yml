@@ -6,6 +6,22 @@ jobs:
   cypress-run:
     runs-on: windows-latest
 
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: tfeiamho_vetcastle
+          MYSQL_PASSWORD: 1Time@p!
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,6 +37,9 @@ jobs:
       - name: Install Cypress
         run: npm install cypress --save-dev --force
 
+      - name: Wait for MySQL to be ready
+        run: sleep 30 # Adjust this based on how long MySQL needs to start
+
       - name: Start API server
         shell: pwsh
         run: |
@@ -33,7 +52,7 @@ jobs:
         shell: pwsh
         run: |
           cd web/webapp
-          npm install
+          npm install --legacy-peer-deps
           start-process npm -ArgumentList 'start' -NoNewWindow
           Start-Sleep -Seconds 10
       
@@ -45,8 +64,8 @@ jobs:
       
       - name: Stop servers
         if: always()
-        run: |
-          taskkill /IM "node.exe" /F
+        run: taskkill /IM "node.exe" /F
+
 
       
       - name: Stop servers
