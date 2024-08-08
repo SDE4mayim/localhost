@@ -17,10 +17,8 @@ jobs:
           --health-timeout=5s
           --health-retries=3
         env:
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: 1Time@p!
           MYSQL_DATABASE: tfeiamho_vetcastle
-          MYSQL_USER: root
-          MYSQL_PASSWORD: 1Time@p!
 
     steps:
       - name: Checkout
@@ -41,30 +39,26 @@ jobs:
         run: sleep 30 # Adjust this based on how long MySQL needs to start
 
       - name: Start API server
-        shell: pwsh
         run: |
           cd web/apis
           npm install
-          start-process npm -ArgumentList 'start' -NoNewWindow
-          Start-Sleep -Seconds 10
+          nohup npm start & # Start the API server in the background
+          sleep 10 # Wait for the server to start
       
       - name: Start web server
-        shell: pwsh
         run: |
           cd web/webapp
           npm install --legacy-peer-deps
-          start-process npm -ArgumentList 'start' -NoNewWindow
-          Start-Sleep -Seconds 10
-      
-      - name: Wait for servers to be ready
-        run: timeout /t 30 # Adjust the time as needed to ensure servers are up
+          nohup npm start & # Start the web server in the background
+          sleep 10 # Wait for the server to start
       
       - name: Run Cypress tests
         run: npx cypress run
       
       - name: Stop servers
         if: always()
-        run: taskkill /IM "node.exe" /F
+        run: killall node # Stop any running Node.js processes
+
 
 
       
