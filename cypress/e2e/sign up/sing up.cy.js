@@ -1,0 +1,25 @@
+describe('sing',()=>{
+   it('up',()=>{
+cy.visit('https://vetcastle.com')
+cy.get('.btn-sm').click()
+cy.url().should('eq','http://vetcastle.com/signup')
+cy.get('.justify-center > :nth-child(3)').click()
+cy.get(':nth-child(2) > .block').click()
+cy.get('#username').type('NAVEEN')
+cy.get('#email').type('naveen@gmail .com')
+cy.get('#password').type('NAVEEN@3445')
+cy.get(':nth-child(1) > :nth-child(3) > .px-3').type('naveen')
+cy.get('.max-w-full > :nth-child(1) > :nth-child(2) > :nth-child(3) > .px-3').type('pennagaram')
+cy.get(':nth-child(1) > :nth-child(4) > .px-3').type('kumar')
+cy.get('#country').select('India')
+cy.get('#hospitalCategory').select('Animal Hospitals')
+cy.get('#state').select('Tamil Nadu')
+cy.get(':nth-child(6) > .w-full > .react-tel-input > .form-control').type('1234567890')
+cy.get(':nth-child(7) > .w-full > .react-tel-input > .form-control').type('0987654321')
+cy.get('#city').select('Dharmapuri')
+cy.get('#pincode').type('123654')
+cy.get('.btn').click()
+   })
+
+
+})
