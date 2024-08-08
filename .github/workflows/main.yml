@@ -17,22 +17,31 @@ jobs:
       
       - name: Install dependencies
         run: npm install --force
-      
+
       - name: Install Cypress
         run: npm install cypress --save-dev --force
-      
+
       - name: Start API server
-        run: npm install
+        run: |
+          cd web/apis
+          npm install
+          npm start &
           timeout /t 10
-      - name: Start API run server
-        run : npm install
       
       - name: Start web server
-        run: npm install --legacy-peer-deps
+        run: |
+          cd web/webapp
+          npm install
+          npm start &
           timeout /t 10
-      - name: Start web server running
-        run : npm run dev
+      
+      - name: Wait for servers to be ready
+        run: timeout /t 30 # Adjust the time as needed to ensure servers are up
       
       - name: Run Cypress tests
         run: npx cypress run
+      
+      - name: Stop servers
+        if: always()
+        run: taskkill /IM "node.exe" /F
 
