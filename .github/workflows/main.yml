@@ -55,14 +55,9 @@ jobs:
       - name: Run Cypress tests
         run: npx cypress run
       
-      - name: Stop servers
-        if: always()
-        run: killall node # Stop any running Node.js processes
-
+      
 
 
       
-      - name: Stop servers
-        if: always()
-        run: taskkill /IM "node.exe" /F
+    
 
