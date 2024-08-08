@@ -22,24 +22,32 @@ jobs:
         run: npm install cypress --save-dev --force
 
       - name: Start API server
+        shell: pwsh
         run: |
           cd web/apis
           npm install
-          npm start &
-          timeout /t 10
+          start-process npm -ArgumentList 'start' -NoNewWindow
+          Start-Sleep -Seconds 10
       
       - name: Start web server
+        shell: pwsh
         run: |
           cd web/webapp
           npm install
-          npm start &
-          timeout /t 10
+          start-process npm -ArgumentList 'start' -NoNewWindow
+          Start-Sleep -Seconds 10
       
       - name: Wait for servers to be ready
         run: timeout /t 30 # Adjust the time as needed to ensure servers are up
       
       - name: Run Cypress tests
         run: npx cypress run
+      
+      - name: Stop servers
+        if: always()
+        run: |
+          taskkill /IM "node.exe" /F
+
       
       - name: Stop servers
         if: always()
