@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     services:
       mysql:
@@ -52,7 +52,7 @@ jobs:
           nohup npm run dev & # Start the web server in the background
           sleep 10 # Wait for the server to start
       
-      - name: Run Cypress tests
+      - name:  Cypress run
         run: npx cypress run
       
       
