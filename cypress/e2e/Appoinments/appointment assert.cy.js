@@ -1,6 +1,6 @@
 describe('user',()=>{
     it('name',()=>{
-    cy.visit(' http://localhost:44497/')
+    cy.visit(' http://localhost:5173/')
     cy.get('.grow > :nth-child(2) > .font-medium').click()
     cy.get('.justify-center > :nth-child(3)').click()
     cy.get('#username').type('naveen')
