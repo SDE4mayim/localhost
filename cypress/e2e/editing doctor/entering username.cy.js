@@ -1,6 +1,6 @@
 describe('open',() =>{
   it('verify',() =>{
-     cy.visit(' http://localhost:5173/')
+     cy.visit(' http://lochost:5173/')
      cy.get('.grow > :nth-child(2) > .font-medium').click()
      
             cy.url().should('eq','http://lochost:5173/signin')
@@ -11,7 +11,7 @@ describe('open',() =>{
      cy.get('.btn').click()
      cy.wait(1000) 
      cy.visit("http://localhost:5173/maindashboard")
-     cy.url().should('eq',"https://vetcastle.com/maindashboard")
+     cy.url().should('eq',"http://lochost:5173/maindashboard")
      cy.get('[href="/dsd"] > .MuiListItemText-root > .MuiTypography-root').click()
                   cy.url().should('eq','http://localhost:5173/dsd')
      cy.get('[data-id="300001"] > [data-field="action"] > .cellAction > .viewbutton').click()
@@ -20,8 +20,7 @@ describe('open',() =>{
       cy.get('.MuiDialogContent-root > :nth-child(2) > :nth-child(4)').type("sjchristopher")
       cy.get('.MuiDialogActions-root > .MuiGrid-container > :nth-child(2) > :nth-child(1)').click()
       cy.on('window:alert', (text) => {
-        expect(text).to.contains('Failed to update profile')
-       
+        expect(text).to.contains('Failed to update profile')     
     })
     })
 
