@@ -1,6 +1,6 @@
 describe('user',()=>{
     it('name',()=>{
-    cy.visit(' http://lochost:5173/')
+    cy.visit(' http://lochost:44497/')
     cy.get('.grow > :nth-child(2) > .font-medium').click()
     cy.get('.justify-center > :nth-child(3)').click()
     cy.get('#username').type('naveen')
@@ -9,7 +9,7 @@ describe('user',()=>{
     cy.wait(1000)
     cy.reload()
     cy.get('.MuiToolbar-root > .MuiTypography-root').click()   
-    cy.url().should('eq','http://lochost:5173/maindashboard')
+    cy.url().should('eq','http://localhost:44497/maindashboard')
     cy.get('[href="/asd"] > .MuiListItemText-root > .MuiTypography-root').click()
     cy.url().should('eq','http://lochost:5173/asd')
     cy.get('[data-id="800005"] > .MuiDataGrid-cell--withRenderer').click()
