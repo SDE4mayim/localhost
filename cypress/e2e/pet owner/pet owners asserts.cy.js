@@ -8,9 +8,8 @@ describe('first',()=>{
    cy.get('.btn').click()
    cy.wait(1000)
    cy.reload()
-  cy.visit("http://localhost:5173/maindashboard")
-    
-          cy.url().should('eq','http://localhost:5173/maindashboard')
+   cy.visit("http://localhost:5173/maindashboard")
+   cy.url().should('eq','http://localhost:5173/maindashboard')
    cy.get('[href="/csd"] > .MuiListItemText-root > .MuiTypography-root').click()
    cy.url().should('eq','http://localhost:5173/csd')
    cy.get('[data-id="400001"] > [data-field="action"] > .cellAction > .viewbutton').click()
