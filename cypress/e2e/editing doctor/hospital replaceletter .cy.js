@@ -12,7 +12,7 @@ cy.get('.MuiToolbar-root > .MuiTypography-root').click()
  
           cy.url().should('eq','http://localhost:5173/maindashboard')
 cy.get('[href="/hsd"] > .MuiListItemText-root > .MuiTypography-root').click()
-cy.url().should('eq','https://vetcastle.com/hsd')
+cy.url().should('eq','http://localhost:5173/hsd')
 cy.get('.MuiGrid-container > :nth-child(3) > .MuiButtonBase-root').click()
 cy.get('.MuiDialogContent-root > .MuiGrid-container > :nth-child(1)').type('5678901234')
 cy.get('.MuiDialogContent-root > .MuiGrid-container > :nth-child(2)').type('7659')

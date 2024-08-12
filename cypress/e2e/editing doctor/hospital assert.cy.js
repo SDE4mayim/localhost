@@ -12,7 +12,7 @@ describe('user',()=>{
      
           cy.url().should('eq','http://localhost:5173/maindashboard')
     cy.get('[href="/hsd"] > .MuiListItemText-root > .MuiTypography-root').click()
-    cy.url().should('eq','https://vetcastle.com/hsd')
+    cy.url().should('eq','http://localhost:5173/hsd')
     cy.get('[data-id="100001"] > [data-field="action"] > .cellAction > .viewbutton').click()
     cy.get('[data-testid="EditIcon"]').click()
     cy.get('.MuiDialogContent-root > :nth-child(2) > :nth-child(6)').clear().type('naveen')

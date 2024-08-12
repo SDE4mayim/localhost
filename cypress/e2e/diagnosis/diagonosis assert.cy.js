@@ -1,6 +1,5 @@
 describe('dia',()=>{
     it('genius',()=>{
-
     cy.visit(' http://localhost:5173/')
     cy.get('.grow > :nth-child(2) > .font-medium').click()
     cy.get('.justify-center > :nth-child(3)').click()

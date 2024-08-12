@@ -5,7 +5,7 @@ describe('open',() =>{
         cy.title().should('eq','VET CASTLE')
      cy.url().should('eq','http://localhost:5173/')
         cy.get('.aos-init > .btn').click()
-        cy.url().should('eq','https://vetcastle.com/signup')
+        cy.url().should('eq','https://localhost:5173/signup')
         
     })
 }

@@ -12,7 +12,7 @@ describe('open',() =>{
         cy.wait(1000)
         cy.visit("http://localhost:5173/maindashboard")
         cy.get('[href="/csd"] > .MuiListItemText-root > .MuiTypography-root').click()
-        cy.url().should('eq','https://localhost:5173/csd')
+        cy.url().should('eq','http://localhost:5173/csd')
         cy.get('#search').type("Krish")
         cy.get('.MuiGrid-container > :nth-child(2) > .MuiButtonBase-root').click()   
     })

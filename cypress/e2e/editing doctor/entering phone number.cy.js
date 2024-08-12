@@ -11,7 +11,7 @@ describe('open',() =>{
        cy.get('.btn').click()
        cy.wait(1000)
        cy.visit("http://localhost:5173/maindashboard")
-       cy.url().should('eq',"https://vetcastle.com/maindashboard")
+       cy.url().should('eq',"http://localhost:5173/maindashboard")
        cy.get('[href="/dsd"] > .MuiListItemText-root > .MuiTypography-root').click()
                     cy.url().should('eq','http://localhost:5173/dsd')
        cy.get('[data-id="300003"] > [data-field="action"] > .cellAction > .viewbutton').click()
