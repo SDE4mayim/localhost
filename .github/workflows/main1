@@ -1,0 +1,49 @@
+jobs:
+  cypress-run:
+    runs-on: Ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+        env:
+          MYSQL_ROOT_PASSWORD: 1Time@p!
+          MYSQL_DATABASE: tfeiamho_vetcastle
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Install Cypress
+        run: npm install cypress --save-dev --force
+
+      - name: Start API server
+        run: |
+          cd web/apis
+          npm install
+          nohup npm start > api_server.log 2>&1 &
+          npx wait-on http://localhost:5173
+      
+      - name: Start web server
+        run: |
+          cd web/webapp
+          npm install --legacy-peer-deps
+          nohup npm run dev > web_server.log 2>&1 &
+          npx wait-on http://localhost:5173
+      
+      - name: Cypress run
+        run: npx cypress run
