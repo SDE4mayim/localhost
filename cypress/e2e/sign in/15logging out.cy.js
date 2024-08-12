@@ -11,7 +11,7 @@ describe('open',() =>{
            cy.url().should("eq","http://localhost:5173/maindashboard")
         cy.reload()
         cy.get("[href='/']").click()
-        cy.url().should("eq",'https://vetcastle.com/')
+        cy.url().should("eq",'http://localhost:5173/')
 
     })
 }
