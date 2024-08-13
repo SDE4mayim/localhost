@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   cypress-run:
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
 
     services:
       mysql:
@@ -22,40 +22,61 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
       
       - name: Install dependencies
-        run: npm install --force
-
+        run: npm install
+      
       - name: Install Cypress
-        run: npm install cypress --save-dev --force
+        run: npm install cypress --save-dev
 
       - name: Wait for MySQL to be ready
-        run: sleep 30 # Adjust this based on how long MySQL needs to start
-
+        run: |
+          for i in {30..0}; do
+            if mysqladmin ping -h"127.0.0.1" --silent; then
+              break
+            fi
+            echo 'MySQL is unavailable - sleeping'
+            sleep 1
+          done
+        shell: bash
+      
       - name: Start API server
         run: |
           cd web/apis
           npm install
           nohup npm start & # Start the API server in the background
-          sleep 10 # Wait for the server to start
+          for i in {30..0}; do
+            if nc -z localhost 3000; then
+              break
+            fi
+            echo 'API server is unavailable - sleeping'
+            sleep 1
+          done
+        shell: bash
       
       - name: Start web server
         run: |
           cd web/webapp
           npm install --legacy-peer-deps
           nohup npm run dev & # Start the web server in the background
-          sleep 10 # Wait for the server to start
+          for i in {30..0}; do
+            if nc -z localhost 8080; then
+              break
+            fi
+            echo 'Web server is unavailable - sleeping'
+            sleep 1
+          done
+        shell: bash
       
-      - name:  Cypress run
+      - name: Cypress run
         run: npx cypress run
-         sleep 30 
-      
+
       
 
 
