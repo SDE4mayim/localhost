@@ -54,6 +54,7 @@ jobs:
       
       - name:  Cypress run
         run: npx cypress run
+         sleep 10 
       
       
 
