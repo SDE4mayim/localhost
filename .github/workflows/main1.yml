@@ -48,10 +48,11 @@ jobs:
       - name: Start web server
         run: |
           cd web/webapp
+           npm install @mui/material @emotion/react @emotion/styled
+          npm install --legacy-peer-deps
           nohup npm run dev & # Start the web server in the background
           sleep 10 # Wait for the server to start
-          npm install @mui/material @emotion/react @emotion/styled
-          npm install --legacy-peer-deps
+         
       
       - name: Run Cypress tests
         run: npx cypress run
