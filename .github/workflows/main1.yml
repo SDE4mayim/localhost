@@ -35,11 +35,7 @@ jobs:
       - name: Install Cypress
         run: npm install cypress --save-dev --force
 
-      - name: Install MUI in API server
-        run: |
-          cd web/apis
-          npm install @mui/material @emotion/react @emotion/styled
-           npm install --legacy-peer-deps
+  
 
       - name: Install MUI in web server
         run: |
