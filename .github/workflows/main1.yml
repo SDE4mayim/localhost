@@ -35,13 +35,6 @@ jobs:
       - name: Install Cypress
         run: npm install cypress --save-dev --force
 
-  
-
-      - name: Install MUI in web server
-        run: |
-          cd web/webapp
-          npm install @mui/material @emotion/react @emotion/styled
-          npm install --legacy-peer-deps
 
       - name: Wait for MySQL to be ready
         run: sleep 30 # Adjust this based on how long MySQL needs to start
@@ -57,6 +50,8 @@ jobs:
           cd web/webapp
           nohup npm run dev & # Start the web server in the background
           sleep 10 # Wait for the server to start
+          npm install @mui/material @emotion/react @emotion/styled
+          npm install --legacy-peer-deps
       
       - name: Run Cypress tests
         run: npx cypress run
