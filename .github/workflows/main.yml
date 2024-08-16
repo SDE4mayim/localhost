@@ -36,16 +36,9 @@ jobs:
         run: npx cypress install
 
       - name: Wait for MySQL to be ready and create the database
-        run: |
-          for i in {30..0}; do
-            if mysqladmin ping -h"127.0.0.1" --silent; then
-              break
-            fi
-            echo 'MySQL is unavailable - sleeping'
-            sleep 1
-          done
+        run: 
           mysql -h"127.0.0.1" -uroot -p1Time@p! -e "CREATE DATABASE IF NOT EXISTS tfeiamho_vetcastle;"
-        shell: bash
+       
       
       - name: Start API server
         run: |
@@ -53,7 +46,7 @@ jobs:
           npm install
           nohup npm start &
           npx wait-on http://localhost:3000
-        shell: bash
+        
       
       - name: Start web server
         run: |
