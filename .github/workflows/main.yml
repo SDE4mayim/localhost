@@ -34,11 +34,6 @@ jobs:
       
       - name: Install Cypress
         run: npx cypress install
-
-      - name: Wait for MySQL to be ready and create the database
-        run: 
-          mysql -h"127.0.0.1" -uroot -p1Time@p! -e "CREATE DATABASE IF NOT EXISTS tfeiamho_vetcastle;"
-       
       
       - name: Start API server
         run: |
@@ -54,7 +49,7 @@ jobs:
           npm install --legacy-peer-deps
           nohup npm run dev &
           npx wait-on http://localhost:8080
-        shell: bash
+     
       
       - name: Cypress run
         run: npx cypress run
