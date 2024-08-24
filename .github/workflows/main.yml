@@ -21,36 +21,53 @@ jobs:
           MYSQL_DATABASE: tfeiamho_vetcastle
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
       
+      - name: Cache node_modules and Cypress
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-cypress-${{ hashFiles('**/cypress.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-cypress-
+            ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm install
       
       - name: Install Cypress
-        run: npx cypress install
-      
+        run: npm install cypress --save-dev
+
       - name: Start API server
         run: |
           cd web/apis
           npm install
           nohup npm start &
-          npx wait-on http://localhost:5173
-        
-      
+
+      - name: Wait for API server to be ready
+        run: npx wait-on http://localhost:3000
+
       - name: Start web server
         run: |
           cd web/webapp
           npm install --legacy-peer-deps
           nohup npm run dev &
-          npx wait-on http://localhost:5173
-     
-      
+
+      - name: Wait for web server to be ready
+        run: npx wait-on http://localhost:5173
+
+      - name: Run Cypress tests
+        run: npx cypress run
+
       - name: Cypress run
         run: npx cypress run
         env:
