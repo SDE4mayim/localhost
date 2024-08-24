@@ -40,7 +40,7 @@ jobs:
           cd web/apis
           npm install
           nohup npm start &
-          npx wait-on http://localhost:3000
+          npx wait-on http://localhost:5173
         
       
       - name: Start web server
@@ -48,7 +48,7 @@ jobs:
           cd web/webapp
           npm install --legacy-peer-deps
           nohup npm run dev &
-          npx wait-on http://localhost:8080
+          npx wait-on http://localhost:5173
      
       
       - name: Cypress run
